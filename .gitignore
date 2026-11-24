@@ -1,0 +1,14 @@
+# Сборка CMake
+build/
+
+# Python
+.venv/
+__pycache__/
+
+# Скомпилированные учебные программы (исходники .cpp остаются)
+experiments/*
+!experiments/*.cpp
+
+# Редакторы и ОС
+.vscode/
+.DS_Store

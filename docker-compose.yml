@@ -1,0 +1,15 @@
+# Окружение для разработки: виртуальный дрон (ArduPilot SITL)
+# Запуск:     docker compose up -d --build
+# Логи:       docker compose logs -f
+# Остановка:  docker compose down
+
+services:
+  sitl:
+    build:
+      context: ./sitl
+      args:
+        ARDUPILOT_TAG: Copter-4.5.7   # версию ArduPilot меняем здесь
+    image: my-sitl:4.5.7
+    container_name: ardupilot-sitl
+    network_mode: host                # порты 5760/5762/5763 доступны на 127.0.0.1
+    restart: unless-stopped           # поднимется сам после перезагрузки OrbStack
